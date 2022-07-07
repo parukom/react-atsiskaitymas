@@ -4,6 +4,7 @@ const Registration = () => {
   return (
     <section className="centruotas">
       <div className="registracijosDivas">
+        <h1>Register</h1>
         <form>
           <label htmlFor="name">Name</label> <br />
           <input type="text" name="name" /> <br />
