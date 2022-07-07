@@ -6,21 +6,27 @@ const Registration = () => {
   const agreementAgree = () => {
     setChecked(!checked);
   };
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    if (id === "email") {
+      setEmail(value);
+    }
+    if (id === "password") {
+      setPassword(value);
+    }
+  };
   return (
     <section className="centruotas">
       <div className="registracijosDivas">
         <h1>Register</h1>
-        <form>
-          <label htmlFor="name">Name</label> <br />
-          <input type="text" name="name" /> <br />
-          <label htmlFor="surname">Surname</label> <br />
-          <input type="text" name="surname" /> <br />
-          <label htmlFor="username">Nickname</label> <br />
-          <input type="text" name="username" /> <br />
+        <form onSubmit={() => handleInputChange()}>
           <label htmlFor="email">Email</label> <br />
-          <input type="email" name="email" /> <br />
+          <input type="email" value={email} name="email" /> <br />
           <label htmlFor="password">Password</label> <br />
-          <input type="password" name="password" /> <br />
+          <input type="password" value={password} name="password" /> <br />
           <label htmlFor="agreement">
             I agree on all this shit by pressing button
           </label>

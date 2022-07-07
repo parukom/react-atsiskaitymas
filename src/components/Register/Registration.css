@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
+
 .registracijosDivas{
     background-color: #333;
     height: 400px;
@@ -9,7 +10,7 @@
     overflow: hidden;
 }
 .registracijosDivas form{
-    margin-top: 30px;
+    margin-top: 80px;
     font-family: 'Cormorant Garamond', serif;
 }
 .registracijosDivas h1{
@@ -27,6 +28,7 @@
     background-color: transparent;
     border: none;
     border-bottom: 1px solid gray;
+    color: rgb(1, 150, 150);
     height: 30px;
     margin: 0 10%;
     width: 80%;

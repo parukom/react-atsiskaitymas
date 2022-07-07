@@ -9,26 +9,21 @@
     position: relative;
     overflow: hidden;
 }
-
 .loginDivas form {
     margin-top: 80px;
     font-family: 'Cormorant Garamond', serif;
 }
-
 .loginDivas h1 {
     color: white;
     font-family: 'Cormorant Garamond', serif;
     margin-left: 10%;
     margin-top: 10px;
 }
-
 .loginDivas label {
     color: white;
     margin-left: 10%;
     margin-top: 40px;
-
 }
-
 .loginDivas input {
     background-color: transparent;
     border: none;
@@ -38,7 +33,6 @@
     margin: 0 10%;
     width: 80%;
 }
-
 .loginDivas button {
     background-color: transparent;
     border: none;
@@ -50,7 +44,6 @@
     position: absolute;
     right: 10%;
     bottom: 40px;
-    transition: 0.3s;
 }
 .loginDivas button:hover{
     color: rgb(1, 150, 150);

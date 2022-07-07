@@ -3,7 +3,9 @@ import "./Home.css";
 const HomeLoggedIn = () => {
   return (
     <section className="homeLoggedInSection">
-      <div></div>
+      <div>
+        <h2>Welcome to our gif lab</h2>
+      </div>
     </section>
   );
 };

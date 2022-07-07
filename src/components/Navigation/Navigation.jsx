@@ -10,9 +10,6 @@ const Navigation = () => {
       <Link to="/register">
         <button className="navValdymas">Sign Up</button>
       </Link>
-      <Link to="/">
-        <button className="navValdymas">Home</button>
-      </Link>
     </nav>
   );
 };
