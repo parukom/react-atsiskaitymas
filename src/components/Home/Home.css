@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
+/* before logged in */
+.homeMainSection{
+    background-image: url('./greenBackground.gif');
+    background-size: cover;
+    height: calc(100vh - 50px);
+    margin: 0 auto;
+    overflow: hidden;
+}
+.homeMainSection h1 {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 6rem;
+    color: wheat;
+}
+
+.span1, .span2{
+    text-decoration: none;
+}
+.span1{
+    color: green;   
+}
+.span2{
+    color: blue;
+}

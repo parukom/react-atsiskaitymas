@@ -2,9 +2,9 @@ import "./Navigation.css";
 
 const NavigationLoggedIn = () => {
   return (
-    <nav>
-      <button>Home</button>
-      <button>Logout</button>
+    <nav className="navigacijaLoggedIn">
+      <button className="navValdymas">Home</button>
+      <button className="navValdymas">Logout</button>
     </nav>
   );
 };
