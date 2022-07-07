@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
-.registracijosDivas{
+
+.loginDivas {
     background-color: #333;
     height: 400px;
     margin: 0 auto;
@@ -8,30 +9,37 @@
     position: relative;
     overflow: hidden;
 }
-.registracijosDivas form{
-    margin-top: 30px;
+
+.loginDivas form {
+    margin-top: 80px;
     font-family: 'Cormorant Garamond', serif;
 }
-.registracijosDivas h1{
+
+.loginDivas h1 {
     color: white;
     font-family: 'Cormorant Garamond', serif;
     margin-left: 10%;
     margin-top: 10px;
 }
-.registracijosDivas label{
+
+.loginDivas label {
     color: white;
     margin-left: 10%;
-    margin-top: 10px;
+    margin-top: 40px;
+
 }
-.registracijosDivas input{
+
+.loginDivas input {
     background-color: transparent;
     border: none;
     border-bottom: 1px solid gray;
+    color: rgb(1, 150, 150);
     height: 30px;
     margin: 0 10%;
     width: 80%;
 }
-.registracijosDivas button{
+
+.loginDivas button {
     background-color: transparent;
     border: none;
     border-bottom: 2px solid gray;
@@ -41,9 +49,11 @@
     font-size: 1.3rem;
     position: absolute;
     right: 10%;
-    bottom: 20px;
+    bottom: 40px;
+    transition: 0.3s;
 }
-.registracijosDivas button:disabled{
-   color: rgb(32, 32, 32);
-   border-bottom: 1px solid rgb(32, 32, 32);
+.loginDivas button:hover{
+    color: rgb(1, 150, 150);
+    border-bottom: 2px solid rgb(1, 150, 150);
+    transition: 0.3s;
 }

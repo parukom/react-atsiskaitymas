@@ -1,6 +1,11 @@
+import { useState } from "react";
 import "./Registration.css";
 
 const Registration = () => {
+  const [checked, setChecked] = useState(false);
+  const agreementAgree = () => {
+    setChecked(!checked);
+  };
   return (
     <section className="centruotas">
       <div className="registracijosDivas">
@@ -16,7 +21,23 @@ const Registration = () => {
           <input type="email" name="email" /> <br />
           <label htmlFor="password">Password</label> <br />
           <input type="password" name="password" /> <br />
-          <button>Register</button>
+          <label htmlFor="agreement">
+            I agree on all this shit by pressing button
+          </label>
+          <input
+            style={{
+              width: "20px",
+              height: 20,
+              marginLeft: 10,
+            }}
+            type="checkbox"
+            onChange={agreementAgree}
+            name="agreement"
+            id="agreement"
+          />
+          <button type="submit" id="regsiterButton" disabled={!checked}>
+            Register
+          </button>
         </form>
       </div>
     </section>
