@@ -1,10 +1,11 @@
 import "./Add.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const Add = ({ loggedIn }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const navigate = useNavigate();
   const updatesSomething = (e) => {
     e.preventDefault();
     fetch("https://autumn-delicate-wilderness.glitch.me/v1/content/skills", {
@@ -33,6 +34,10 @@ const Add = ({ loggedIn }) => {
         <section className="addGifSection">
           <div className="blurrBackas">
             <div className="addGifMainDiv">
+              <Link to="/">
+                <button className="isjungti"> X</button>
+              </Link>
+
               <h1>Add some stuff</h1>
               <form onSubmit={updatesSomething}>
                 <label htmlFor="title">Title</label> <br />

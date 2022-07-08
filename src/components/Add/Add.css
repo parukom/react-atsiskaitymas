@@ -25,6 +25,7 @@
     width: 600px;
     overflow: hidden;
     z-index: 5 ;
+    position: relative;
 }
 .addGifMainDiv form{
     margin: 30px;
@@ -43,10 +44,20 @@
     margin-top: 10px;
     width: 530px;
 }
-.addGifMainDiv button {
+.form button {
     background-color: transparent;
     border: 1px solid gray;
     color: white;
     padding: 5px;
     width: 100px;
+}
+.isjungti{
+    background-color: transparent;
+    border: none;
+    color: red;
+    font-size: 1.3rem;
+    right: 0;
+    top: 0;
+    position: absolute;
+    width: 30px;
 }
