@@ -1,5 +1,7 @@
 import "./App.css";
+import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import Navigation from "./components/Navigation/Navigation";
 import Registration from "./components/Register/Registration";
@@ -9,14 +11,23 @@ import Add from "./components/Add/Add";
 import HomeLoggedIn from "./components/Home/HomeLoggedIn";
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (token) setLoggedIn(true);
+  }, [navigate]);
+
   return (
     <>
-      <Navigation />
+      <Navigation setLoggedIn={setLoggedIn} loggedIn={loggedIn} />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/home" element={<HomeLoggedIn />} />
         <Route path="/add" element={<Add />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login setLoggedIn={setLoggedIn} />} />
         <Route path="/register" element={<Registration />} />
       </Routes>
     </>

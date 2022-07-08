@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
-const Login = () => {
+const Login = ({ setLoggedIn }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -26,6 +26,7 @@ const Login = () => {
         }
         if (res.token) {
           localStorage.setItem("token", res.token);
+          setLoggedIn(true);
           navigate("/home");
         }
       });
