@@ -1,11 +1,10 @@
 import "./Add.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const Add = ({ loggedIn }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const navigate = useNavigate();
   const updatesSomething = (e) => {
     e.preventDefault();
     fetch("https://autumn-delicate-wilderness.glitch.me/v1/content/skills", {
