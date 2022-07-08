@@ -1,15 +1,35 @@
 import { useState } from "react";
 import "./Registration.css";
+import { useNavigate } from "react-router-dom";
 
 const Registration = () => {
   const [checked, setChecked] = useState(false);
   const agreementAgree = () => {
     setChecked(!checked);
   };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     e.preventDefault();
-    console.log(e.target.email.value, e.target.password.value);
+    fetch("https://autumn-delicate-wilderness.glitch.me/v1/auth/register", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        setEmail("");
+        setPassword("");
+        navigate("/home");
+        console.log(res);
+      });
   };
   return (
     <section className="centruotas">
@@ -17,9 +37,21 @@ const Registration = () => {
         <h1>Register</h1>
         <form onSubmit={handleInputChange}>
           <label htmlFor="email">Email</label> <br />
-          <input type="email" name="email" /> <br />
+          <input
+            type="email"
+            name="email"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+          />{" "}
+          <br />
           <label htmlFor="password">Password</label> <br />
-          <input type="password" name="password" /> <br />
+          <input
+            type="password"
+            name="password"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+          />{" "}
+          <br />
           <label htmlFor="agreement">
             I agree on all this shit by pressing button
           </label>
