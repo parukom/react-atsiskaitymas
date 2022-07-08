@@ -1,15 +1,57 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const prisijungti = async (e) => {
+    e.preventDefault();
+    await fetch("https://autumn-delicate-wilderness.glitch.me/v1/auth/login", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.err) {
+          console.log(res.err);
+        }
+        if (res.token) {
+          localStorage.setItem("token", res.token);
+          navigate("/home");
+        }
+      });
+  };
+
   return (
     <section className="centruotas">
       <div className="loginDivas">
         <h1>Login</h1>
-        <form>
+        <form onSubmit={prisijungti}>
           <label htmlFor="email">Email or nickname</label> <br />
-          <input type="email" name="email" /> <br />
+          <input
+            type="email"
+            value={email}
+            name="email"
+            onChange={(e) => setEmail(e.target.value)}
+          />{" "}
+          <br />
           <label htmlFor="password">Password</label> <br />
-          <input type="password" name="password" /> <br />
+          <input
+            type="password"
+            value={password}
+            name="password"
+            onChange={(e) => setPassword(e.target.value)}
+          />{" "}
+          <br />
           <button>Login</button>
         </form>
       </div>
