@@ -7,14 +7,14 @@ const Navigation = ({ loggedIn, setLoggedIn }) => {
   const logout = () => {
     localStorage.removeItem("token");
     setLoggedIn(false);
-    navigate("/login");
+    navigate("/");
   };
   return (
     <>
       {loggedIn ? (
         <nav className="navigacija">
           <div>
-            <Link to="/home">
+            <Link to="/">
               {" "}
               <h1 className="navValdymas home">HOME</h1>
             </Link>
@@ -30,12 +30,7 @@ const Navigation = ({ loggedIn, setLoggedIn }) => {
         </nav>
       ) : (
         <nav className="navigacija">
-          <div>
-            <Link to="/home">
-              {" "}
-              <h1 className="navValdymas home">HOME</h1>
-            </Link>
-          </div>
+          <div></div>
           <div>
             <Link to="/login">
               <button className="navValdymas">Login</button>

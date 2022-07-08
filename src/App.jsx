@@ -8,7 +8,6 @@ import Registration from "./components/Register/Registration";
 import Login from "./components/Login/Login";
 import HomePage from "./components/Home/Home";
 import Add from "./components/Add/Add";
-import HomeLoggedIn from "./components/Home/HomeLoggedIn";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -24,9 +23,9 @@ function App() {
     <>
       <Navigation setLoggedIn={setLoggedIn} loggedIn={loggedIn} />
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/home" element={<HomeLoggedIn />} />
-        <Route path="/add" element={<Add />} />
+        <Route path="/" element={<HomePage loggedIn={loggedIn} />} />
+        {/* <Route path="/home" element={<HomeLoggedIn />} /> */}
+        <Route path="/add" element={<Add loggedIn={loggedIn} />} />
         <Route path="/login" element={<Login setLoggedIn={setLoggedIn} />} />
         <Route path="/register" element={<Registration />} />
       </Routes>

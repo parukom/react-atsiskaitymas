@@ -27,7 +27,7 @@ const Login = ({ setLoggedIn }) => {
         if (res.token) {
           localStorage.setItem("token", res.token);
           setLoggedIn(true);
-          navigate("/home");
+          navigate("/");
         }
       });
   };
