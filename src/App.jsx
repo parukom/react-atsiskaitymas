@@ -24,7 +24,6 @@ function App() {
       <Navigation setLoggedIn={setLoggedIn} loggedIn={loggedIn} />
       <Routes>
         <Route path="/" element={<HomePage loggedIn={loggedIn} />} />
-        {/* <Route path="/home" element={<HomeLoggedIn />} /> */}
         <Route path="/add" element={<Add loggedIn={loggedIn} />} />
         <Route path="/login" element={<Login setLoggedIn={setLoggedIn} />} />
         <Route path="/register" element={<Registration />} />

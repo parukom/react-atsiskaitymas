@@ -22,7 +22,7 @@ const Login = ({ setLoggedIn }) => {
       .then((res) => res.json())
       .then((res) => {
         if (res.err) {
-          console.log(res.err);
+          alert(res.err);
         }
         if (res.token) {
           localStorage.setItem("token", res.token);

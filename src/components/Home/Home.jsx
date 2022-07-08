@@ -21,7 +21,7 @@ const HomePage = ({ loggedIn }) => {
             </span>{" "}
             or{" "}
             <span>
-              <Link className="span2" to="/registewr">
+              <Link className="span2" to="/register">
                 REGISTER
               </Link>
             </span>

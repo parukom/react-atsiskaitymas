@@ -1,26 +1,60 @@
 import "./Add.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Add = ({ loggedIn }) => {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const updatesSomething = (e) => {
+    e.preventDefault();
+    fetch("https://autumn-delicate-wilderness.glitch.me/v1/content/skills", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+      body: JSON.stringify({
+        title,
+        description,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        setTitle("");
+        setDescription("");
+        alert(res.msg);
+      })
+      .catch((err) => console.log("errorasassdasas", err));
+  };
+
   return (
     <>
       {loggedIn ? (
         <section className="addGifSection">
-          <div className="addGifMainDiv">
-            <h1>Add gif</h1>
-            <form action="">
-              <label htmlFor="gifName">Name this gif</label> <br />
-              <input type="text" name="gifName" placeholder="star wars" />
-              <br />
-              <label htmlFor="gifLink">Link of gif</label> <br />
-              <input
-                type="url"
-                name="gifLink"
-                placeholder="www.pixelgifs.co"
-              />{" "}
-              <br />
-              <button>ADD</button>
-            </form>
+          <div className="blurrBackas">
+            <div className="addGifMainDiv">
+              <h1>Add some stuff</h1>
+              <form onSubmit={updatesSomething}>
+                <label htmlFor="title">Title</label> <br />
+                <input
+                  type="text"
+                  name="title"
+                  onChange={(e) => setTitle(e.target.value)}
+                  placeholder="Big massive title"
+                />
+                <br />
+                <label htmlFor="description">Description</label> <br />
+                <textarea
+                  name="description"
+                  onChange={(e) => setDescription(e.target.value)}
+                  cols="67"
+                  rows="10"
+                  placeholder="Big massive description"
+                ></textarea>
+                <br />
+                <button>ADD</button>
+              </form>
+            </div>
           </div>
         </section>
       ) : (

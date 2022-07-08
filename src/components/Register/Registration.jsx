@@ -24,11 +24,15 @@ const Registration = () => {
       }),
     })
       .then((res) => res.json())
+
       .then((res) => {
-        setEmail("");
-        setPassword("");
-        navigate("/home");
-        console.log(res);
+        if (!res.err) {
+          setEmail("");
+          setPassword("");
+          navigate("/login");
+        } else {
+          alert(res.err);
+        }
       });
   };
   return (
@@ -52,6 +56,7 @@ const Registration = () => {
             value={password}
           />{" "}
           <br />
+          {/* checkboxas */}
           <label htmlFor="agreement">
             I agree on all this shit by pressing button
           </label>

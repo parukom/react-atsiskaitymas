@@ -1,7 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
 .addGifSection{
-            font-family: 'Cormorant Garamond', serif;
+    font-family: 'Cormorant Garamond', serif;
     height: calc(100vh - 50px);
+    position: relative;
+    background-image: url('./welcomeBackground.gif');
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.blurrBackas{
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.34);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index:0;
 }
 .addGifMainDiv {
     background-color: #333;
@@ -9,6 +24,7 @@
     margin-top: 100px;
     width: 600px;
     overflow: hidden;
+    z-index: 5 ;
 }
 .addGifMainDiv form{
     margin: 30px;
