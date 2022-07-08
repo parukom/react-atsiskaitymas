@@ -52,7 +52,7 @@ const Add = ({ loggedIn }) => {
                   placeholder="Big massive description"
                 ></textarea>
                 <br />
-                <button>ADD</button>
+                <button type="submit">ADD</button>
               </form>
             </div>
           </div>
